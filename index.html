@@ -10,10 +10,25 @@
       body { overscroll-behavior-y: contain; touch-action: manipulation; }
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      /* Utility for safe area padding on iPhones */
+      .pb-safe-area { padding-bottom: env(safe-area-inset-bottom, 0px); }
     </style>
-    <script type="module" crossorigin src="./assets/index-jAh5b1ch.js"></script>
-  </head>
-  <body class="bg-slate-900 text-slate-100 overflow-hidden h-screen w-screen fixed">
-    <div id="root"></div>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-900 text-slate-100 overflow-hidden h-[100dvh] w-screen fixed">
+    <div id="root" class="h-full w-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
